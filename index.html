@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>memojang - 개인정보 처리방침 (Privacy Policy)</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #334155;
+      --heading: #0f172a;
+      --accent: #f59e0b;
+      --border: #e2e8f0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 760px;
+      width: 100%;
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border);
+    }
+    h1 {
+      font-size: 28px;
+      color: var(--heading);
+      margin-top: 0;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 30px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 18px;
+      color: var(--heading);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    p, li {
+      font-size: 15px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .highlight-box {
+      background: #fef3c7;
+      border-left: 4px solid var(--accent);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 20px 0;
+      font-weight: 500;
+      color: #92400e;
+    }
+    code { overflow-wrap: anywhere; }
+    a { color: #1d4ed8; }
+    .lang-link { font-size: 14px; margin-bottom: 18px; }
+    .note { font-size: 14px; color: #475569; }
+    section[lang="en"] { scroll-margin-top: 20px; }
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: #94a3b8;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="privacy-ko-title">📝 memojang 개인정보 처리방침</h1>
+    <div class="subtitle">문서 갱신일: 2026년 10월 12일 | 적용 대상: memojang v4.6.4 | 개발자: lemrlog</div>
+    <p class="lang-link"><a href="#privacy-en-title" lang="en">English version ↓</a></p>
+
+    <div class="highlight-box">
+      <b>핵심 요약:</b> memojang 확장 프로그램은 메모를 사용자의 브라우저 저장소에서 처리합니다. 정상 기능상 메모를 개발자 서버, 광고업체 또는 분석 서비스로 업로드하지 않습니다. 다만 메모에는 사용자가 입력한 개인정보가 포함될 수 있으며, 저장된 메모와 다운로드한 백업은 앱 자체 암호화로 보호되지 않습니다.
+    </div>
+
+    <h2>1. 처리하는 정보와 사용 목적</h2>
+    <p>사용자가 작성한 <b>메모 제목·본문</b>은 이름, 연락처, 건강정보 등 개인정보 또는 민감한 내용을 포함할 수 있습니다. 메모 ID, 작성·수정 시각, 고정 여부, 수정 버전과 삭제 상태도 메모를 관리하기 위해 로컬에 처리합니다. 언어·테마·자동 저장 등의 설정, 열려 있는 메모 탭과 커서 위치 등 세션 정보 역시 로컬에 보관할 수 있습니다.</p>
+    <p>이 정보는 메모 작성, 저장, 표시, 검색, 정렬, 충돌 처리, 구버전 이전 및 사용자가 요청한 백업·복구 기능에 사용됩니다. 확장 프로그램은 메모 서비스를 위한 계정을 만들거나 로그인 정보를 요구하지 않으며, 방문 기록을 읽거나 광고용 행동 분석을 수행하는 기능을 제공하지 않습니다. 현재 매니페스트에서 요청하는 확장 권한은 <code>storage</code>입니다.</p>
+    <p><b>중요:</b> “개발자가 메모를 서버로 수집하지 않는다”는 뜻이지, 사용자가 입력한 메모에 개인정보가 없거나 확장 프로그램이 개인정보를 전혀 처리하지 않는다는 뜻은 아닙니다.</p>
+
+    <h2>2. 브라우저 내부 저장 및 구버전 데이터</h2>
+    <ul>
+      <li><b>현재 메모:</b> Chrome 확장 프로그램의 로컬 <code>IndexedDB</code> (<code>memojang_workspace_v2</code>)에 저장합니다. 메모별 수정 버전을 비교하여 동시 편집 충돌을 처리합니다.</li>
+      <li><b>삭제 기록:</b> 삭제된 메모의 ID·버전 등 최소한의 <em>tombstone</em> 기록이 IndexedDB에 남아 오래된 탭이 같은 ID를 되살리지 못하도록 합니다. 이 삭제 기록 자체에는 메모 제목·본문을 보관하지 않지만, 구버전 저장소나 사용자 백업에 이전 내용이 별도로 남아 있을 수 있습니다.</li>
+      <li><b>구버전 메모:</b> 이전 버전의 <code>chrome.storage.local</code> 내 <code>memojang_workspace_docs_v1</code> 원본은 새 저장소로 이전한 후에도 자동 삭제하지 않습니다. 따라서 구버전 데이터와 현재 데이터가 한 브라우저 프로필에 함께 남을 수 있습니다.</li>
+      <li><b>내부 메타데이터:</b> IndexedDB에는 이전 여부·재조정 기록 및 사용자가 승인한 수동 복구사본의 중복 방지 기록이 저장될 수 있습니다. 설정과 공유 탭 세션 정보는 <code>chrome.storage.local</code> 및 브라우저의 <code>localStorage</code>, <code>sessionStorage</code>에 저장될 수 있습니다.</li>
+    </ul>
+
+    <h2>3. 구버전 메모 비교·수동 복구</h2>
+    <p>구버전으로 되돌렸다가 다시 업데이트한 경우, 구버전에만 있던 <b>새 ID의 메모</b>는 현재 저장소에 추가로 이전할 수 있습니다. 이미 존재하는 현재 메모나 삭제 기록을 구버전 내용으로 자동 덮어쓰지는 않습니다.</p>
+    <p>같은 ID의 구버전 내용과 현재 메모가 다르면 사용자가 화면에서 비교하고 <b>특정 항목의 복구를 명시적으로 승인</b>해야 별도의 <b>새 ID 복구사본</b>이 만들어집니다. 원래 메모와 삭제 기록은 변경되지 않으며, 중복 생성을 막기 위한 복구 기록이 로컬에 남습니다. 과거 버전에는 메모별 변경 이력이 충분하지 않아 <b>어느 내용이 더 최신인지는 자동으로 판별할 수 없습니다.</b> 중요한 내용은 직접 비교한 후 선택하세요.</p>
+
+    <h2>4. 백업 파일과 보안</h2>
+    <ul>
+      <li>사용자가 직접 전체 백업을 선택하면 <code>.jsonl</code> 파일을 브라우저 다운로드 기능으로 저장합니다. <code>.jsonl</code> 및 구형 <code>.json</code> 복원 파일은 브라우저 안에서 처리되며 개발자 서버에 업로드하지 않습니다. 개별 메모의 텍스트·마크다운 내보내기 및 인쇄/PDF 기능도 사용자가 직접 실행합니다.</li>
+      <li>다운로드한 백업에는 메모 내용과 관련 설정이 포함될 수 있습니다. <b>JSONL 무결성 검증은 암호화가 아닙니다.</b> 백업 및 일반 텍스트 내보내기 파일은 암호화되지 않으므로, 기기 공유·이메일 첨부·클라우드 드라이브 업로드 시 노출에 주의하고 필요하면 별도로 암호화하세요.</li>
+      <li>앱 자체 비밀번호 잠금, 메모 암호화, 클라우드 동기화 또는 원격 복구 서버는 제공하지 않습니다. 브라우저 프로필·기기·다운로드 폴더에 접근할 수 있는 사람은 메모를 읽을 수 있습니다. 운영체제의 디스크 암호화나 사용자가 설정한 백업·동기화 기능은 별개입니다.</li>
+    </ul>
+
+    <h2>5. 자동 저장, 삭제 및 보관 기간</h2>
+    <p>자동 저장을 켜면 입력 후 짧은 대기시간을 거쳐 브라우저 저장소에 기록합니다. 자동 저장을 끈 경우 직접 저장해야 합니다. 저장소 용량 초과·접근 실패, 탭이나 브라우저의 갑작스러운 종료, 저장 완료 전 전원 차단 등으로 <b>가장 최근 입력이 보존되지 않을 수 있습니다.</b> 중요한 메모는 저장 상태를 확인하고 파일 백업을 별도로 만들어 두세요.</p>
+    <p>메모와 설정은 브라우저에서 삭제하거나 프로필·확장 프로그램 저장 데이터를 정리하기 전까지 로컬에 남을 수 있습니다. 앱에서 메모를 삭제해도 삭제 기록, 이전 버전 원본, 다운로드한 백업, 브라우저·운영체제의 기타 사본까지 모두 지워진다고 보장하지 않습니다. 백업 파일은 별도로 관리·삭제해야 하며, 데이터 삭제나 확장 프로그램 제거 전에는 필요한 내용을 직접 백업하세요.</p>
+
+    <h2>6. 외부 전송·제3자 및 이 정책 페이지의 호스팅</h2>
+    <p>현재 memojang 확장 프로그램은 개발자 운영 서버로 메모를 전송하거나 광고·분석 추적기, 원격 실행 코드, 자체 클라우드 동기화 기능을 사용하지 않습니다. 개발자는 확장 프로그램의 정상 기능으로 메모를 판매·대여하거나 광고 타기팅에 사용하지 않습니다. 사용자가 스스로 백업을 공유하거나 외부 서비스에 저장하는 행동은 별개입니다.</p>
+    <p><b>개인정보 처리방침 웹페이지는 확장 프로그램과 별도입니다.</b> 이 문서를 공개 HTTPS 사이트에서 제공하면 실제 호스팅 사업자가 웹페이지 방문 시 IP 주소 및 접속 로그 등 기술적 정보를 처리할 수 있습니다. 게시 전 운영자는 실제 호스팅 사업자, 로그 설정 및 해당 사업자의 개인정보 안내를 확인하여 필요한 고지를 갱신해야 합니다. 이 문서는 특정 호스팅 업체나 공개 URL의 운영 개시를 주장하지 않습니다.</p>
+
+    <h2>7. 문의 및 정책 갱신</h2>
+    <p>개인정보 처리방침, 로컬 데이터 처리 또는 정책 변경에 관한 문의:</p>
+    <ul>
+      <li><b>개발자:</b> lemrlog</li>
+      <li><b>이메일:</b> <a href="mailto:lemrlog@gmail.com">lemrlog@gmail.com</a></li>
+    </ul>
+    <p class="note">이 안내는 확인한 v4.6.4 구현을 기준으로 합니다. 기능, 저장 방식 또는 호스팅 환경이 변경되면 게시 전에 내용을 재검토하고 갱신합니다.</p>
+
+    <hr style="border:0;border-top:1px solid var(--border);margin:42px 0">
+    <section lang="en" aria-labelledby="privacy-en-title">
+      <h1 id="privacy-en-title">memojang Privacy Policy</h1>
+      <div class="subtitle">Last updated: October 12, 2026 | Applies to memojang v4.6.4 | Developer: lemrlog</div>
+      <p class="lang-link"><a href="#privacy-ko-title" lang="ko">한국어 안내 ↑</a></p>
+
+      <div class="highlight-box">
+        <b>At a glance:</b> The memojang extension processes notes within your browser. Its normal functionality does not upload notes to developer servers, advertisers, or analytics services. However, notes may contain personal information you enter, and neither locally saved notes nor downloaded backups receive application-specific encryption.
+      </div>
+
+      <h2>1. Information processed and why</h2>
+      <p>Note <b>titles and bodies</b> may contain personal or sensitive information you choose to enter, such as names, contact details, or health-related information. The extension also processes local note IDs, creation and modification dates, pinned status, revisions, and deletion state. Preferences such as language, theme, and autosave, plus open note tabs and caret/session details, may be retained locally.</p>
+      <p>These details support writing, saving, displaying, searching, sorting, conflict resolution, migration, and user-requested backup or recovery. The extension does not require a developer account or sign-in and has no feature for reading browsing history or behavioral advertising analytics. Its current manifest requests the <code>storage</code> permission.</p>
+      <p><b>Important:</b> Not collecting notes on a developer server does <em>not</em> mean notes contain no personal data or that the extension does not process personal information locally.</p>
+
+      <h2>2. On-device storage and legacy records</h2>
+      <ul>
+        <li><b>Current notes:</b> Stored in the extension's local <code>IndexedDB</code> database (<code>memojang_workspace_v2</code>). Revisions are used to handle edits from multiple tabs.</li>
+        <li><b>Deletion records:</b> IndexedDB may retain a minimal <em>tombstone</em> containing a deleted note's ID and revision to prevent stale tabs from reviving it. The tombstone does not retain the note title or body, but earlier content can remain separately in legacy storage or your backup files.</li>
+        <li><b>Legacy notes:</b> Original records under <code>memojang_workspace_docs_v1</code> in <code>chrome.storage.local</code> are not automatically removed after migration. Old and current note data can therefore coexist in one browser profile.</li>
+        <li><b>Internal metadata:</b> IndexedDB can contain migration/reconciliation records and markers preventing duplicate user-approved recovery copies. Preferences and shared tab-session state can be stored in <code>chrome.storage.local</code>, <code>localStorage</code>, and <code>sessionStorage</code>.</li>
+      </ul>
+
+      <h2>3. Reviewing and manually recovering older notes</h2>
+      <p>After a downgrade and re-upgrade, notes with <b>new IDs</b> present only in the older store can be added to current storage. Existing current notes and deletion records are never automatically overwritten by older content.</p>
+      <p>If a legacy note and current note share an ID but their contents differ, you must <b>review them and explicitly approve that individual recovery</b>. This creates a separate note with a <b>new ID</b>; it does not alter the current note or any deletion tombstone. A local record prevents duplicate recovery copies. Because older versions did not keep enough per-note history, <b>the extension cannot reliably establish which version is newer</b>. Compare important notes before choosing to recover a copy.</p>
+
+      <h2>4. Backup files and security</h2>
+      <ul>
+        <li>You can manually export a <code>.jsonl</code> backup through your browser's download function and import <code>.jsonl</code> or legacy <code>.json</code> files locally. Individual text/Markdown export and Print/PDF are also user-initiated. Imports are processed in the browser, not uploaded to a developer server.</li>
+        <li>Downloaded backups may contain full notes and related preferences. <b>JSONL integrity checks are not encryption.</b> Backup and plain-text export files are unencrypted. Protect them when sharing a device, attaching files to email, or storing them on cloud drives; apply separate encryption if necessary.</li>
+        <li>No application-level password lock, note encryption, cloud sync, or remote recovery service is provided. Anyone with access to your browser profile, device, or downloaded files may be able to read your notes. Operating-system disk encryption or backups/sync configured by you are separate.</li>
+      </ul>
+
+      <h2>5. Autosave, deletion, and retention</h2>
+      <p>With autosave enabled, changes are written after a short delay. When autosave is off, you must save manually. Storage quotas or errors, abrupt browser/tab closure, or power loss before a write completes can cause <b>the most recent changes to be lost</b>. Check the save status and keep independent backups of important notes.</p>
+      <p>Notes and settings can remain locally until you delete them or clear browser/extension storage. Deleting a note within the app does not guarantee erasure of its tombstone, earlier legacy copies, downloaded backups, or other browser/OS copies. You must manage downloaded files separately. Back up anything you need before clearing data or uninstalling the extension.</p>
+
+      <h2>6. Transmission, third parties, and policy-page hosting</h2>
+      <p>The current extension does not upload notes to a developer-operated server or use advertising/analytics trackers, remotely executed code, or its own cloud sync. The developer does not sell or rent notes or use them for behavioral advertising through the extension's normal operation. Sharing a backup yourself or storing it with another service is separate.</p>
+      <p><b>Hosting this privacy-policy webpage is separate from using the extension.</b> Once this document is served on a public HTTPS website, the actual hosting provider may process technical data such as visitors' IP addresses and access logs. Before publication, the operator must verify the hosting provider, log settings, and its privacy disclosures, and update this notice as needed. This document does not claim that any particular host or public URL is already active.</p>
+
+      <h2>7. Contact and updates</h2>
+      <p>For questions about this notice, local data processing, or policy changes: Developer: <b>lemrlog</b> | Email: <a href="mailto:lemrlog@gmail.com">lemrlog@gmail.com</a>.</p>
+      <p class="note">This notice describes the reviewed v4.6.4 implementation. It should be checked and updated before publication whenever features, storage behavior, or hosting arrangements change.</p>
+    </section>
+
+    <footer>
+      © 2026 lemrlog. All rights reserved. | memojang Chrome Extension
+    </footer>
+  </div>
+</body>
+</html>
