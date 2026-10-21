@@ -87,7 +87,7 @@
 <body>
   <div class="container">
     <h1 id="privacy-ko-title">📝 memojang 개인정보 처리방침</h1>
-    <div class="subtitle">문서 개정 초안: 2026년 10월 21일 | 설명 대상: memojang v4.7.2 (미출시 개발 후보) | 개발자: lemrlog</div>
+    <div class="subtitle">문서 개정일: 2026년 10월 21일 | 적용 대상: memojang v4.7.2 업데이트 공개 시부터 | 개발자: lemrlog</div>
     <p class="lang-link"><a href="#privacy-en-title" lang="en">English version ↓</a></p>
 
     <div class="highlight-box">
@@ -124,12 +124,12 @@
 
     <h2>5. 자동 저장, 삭제 및 보관 기간</h2>
     <p>자동 저장을 켜면 입력 후 짧은 대기시간을 거쳐 브라우저 저장소에 기록합니다. 자동 저장을 끈 경우 직접 저장해야 합니다. 저장소 용량 초과·접근 실패, 탭이나 브라우저의 갑작스러운 종료, 저장 완료 전 전원 차단 등으로 <b>가장 최근 입력이 보존되지 않을 수 있습니다.</b> 중요한 메모는 저장 상태를 확인하고 파일 백업을 별도로 만들어 두세요.</p>
-    <p><b>v4.7.2에서 메모 삭제:</b> 일반적인 메모 삭제가 성공하면 현재 제목·본문·태그를 최소한의 삭제 표시(<em>tombstone</em>)로 바꾸고, 이전 수정 기록(과거 태그와 본문 포함)도 같은 IndexedDB 트랜잭션에서 제거합니다. 기록 삭제가 실패하면 메모 삭제 자체도 완료되지 않습니다. 과거 v4.7.0/4.7.1에서 수정 기록을 만든 뒤 <b>v4.6.4 등 이전 버전으로 돌아가 해당 메모를 삭제</b>하면 구버전은 이전 기록을 지우지 않아 로컬 <code>meta</code>에 옛 내용이 남을 수 있습니다. <b>v4.7.2에서는 다시 실행·업그레이드하여 초기화할 때</b> 해당 ID가 실제 삭제 표시로 남아 있는 경우에만 과거 수정 기록을 자동 정리합니다. 살아 있는 메모와 현재 기록, 삭제 여부를 확인할 수 없는 ID의 기록은 임의로 삭제하지 않습니다. 정리 트랜잭션이 실패하면 일부 기록만 제거하지 않고 다음 초기화에서 재시도를 시도합니다. 이는 구버전 <code>chrome.storage.local</code> 원본, 다운로드한 백업 또는 기기·브라우저의 다른 사본까지 지우는 기능이 아니며, v4.7.2를 실행하지 않는 동안 자동 정리를 보장하지 않습니다. 중요한 데이터를 정리하기 전에 별도 백업을 확인하세요.</p>
+    <p><b>v4.7.2에서 메모 삭제:</b> 일반적인 메모 삭제가 성공하면 현재 제목·본문·태그를 최소한의 삭제 표시(<em>tombstone</em>)로 바꾸고, 이전 수정 기록(과거 태그와 본문 포함)도 같은 IndexedDB 트랜잭션에서 제거합니다. 기록 삭제가 실패하면 메모 삭제 자체도 완료되지 않습니다. 과거 v4.7.0/4.7.1에서 수정 기록을 만든 뒤 <b>v4.6.4 등 이전 버전으로 돌아가 해당 메모를 삭제</b>하면 구버전은 이전 기록을 지우지 않아 로컬 <code>meta</code>에 옛 내용이 남을 수 있습니다. <b>v4.7.2로 다시 업데이트한 뒤 새 탭 화면을 열어 메모 저장소가 초기화될 때</b> 해당 ID가 실제 삭제 표시로 남아 있는 경우에만 과거 수정 기록을 자동 정리합니다. 살아 있는 메모와 현재 기록, 삭제 여부를 확인할 수 없는 ID의 기록은 임의로 삭제하지 않습니다. 정리 트랜잭션이 실패하면 일부 기록만 제거하지 않고 다음 초기화에서 재시도를 시도합니다. 이는 구버전 <code>chrome.storage.local</code> 원본, 다운로드한 백업 또는 기기·브라우저의 다른 사본까지 지우는 기능이 아니며, v4.7.2의 새 탭 화면에서 메모 저장소가 초기화되기 전에는 자동 정리를 보장하지 않습니다. 중요한 데이터를 정리하기 전에 별도 백업을 확인하세요.</p>
     <p>메모와 설정은 브라우저에서 삭제하거나 프로필·확장 프로그램 저장 데이터를 정리하기 전까지 로컬에 남을 수 있습니다. 앱에서 메모를 삭제해도 삭제 기록, 이전 버전 원본, 다운로드한 백업, 브라우저·운영체제의 기타 사본까지 모두 지워진다고 보장하지 않습니다. 백업 파일은 별도로 관리·삭제해야 하며, 데이터 삭제나 확장 프로그램 제거 전에는 필요한 내용을 직접 백업하세요.</p>
 
     <h2>6. 외부 전송·제3자 및 이 정책 페이지의 호스팅</h2>
     <p>현재 memojang 확장 프로그램은 개발자 운영 서버로 메모·태그·수정 기록을 전송하거나 광고·분석 추적기, 원격 실행 코드, 자체 클라우드 동기화 기능을 사용하지 않습니다. 개발자는 확장 프로그램의 정상 기능으로 이 데이터를 판매·대여하거나 광고 타기팅에 사용하지 않습니다. 사용자가 스스로 백업을 공유하거나 외부 서비스에 저장하는 행동은 별개입니다.</p>
-    <p><b>개인정보 처리방침 웹페이지는 확장 프로그램과 별도입니다.</b> 기존 정책은 GitHub Pages의 공개 HTTPS 주소 <a href="https://gssg100.github.io/memojang-privacy/">gssg100.github.io/memojang-privacy/</a>에서 제공됩니다. 해당 페이지를 방문할 때 호스팅 서비스인 GitHub가 IP 주소와 접속 로그 같은 기술적 정보를 처리할 수 있습니다. GitHub의 구체적인 처리·보관 내용은 GitHub 개인정보 안내에 따르며, 개발자가 확장 프로그램의 메모를 GitHub로 자동 전송한다는 뜻은 아닙니다. 이 v4.7.2 문서는 아직 로컬 검토 초안이고 공개 정책 페이지를 갱신한 상태가 아닙니다.</p>
+    <p><b>개인정보 처리방침 웹페이지는 확장 프로그램과 별도입니다.</b> 개인정보 처리방침은 GitHub Pages의 공개 HTTPS 주소 <a href="https://gssg100.github.io/memojang-privacy/">gssg100.github.io/memojang-privacy/</a>에서 제공됩니다. 해당 페이지를 방문할 때 호스팅 서비스인 GitHub가 IP 주소와 접속 로그 같은 기술적 정보를 처리할 수 있습니다. GitHub의 구체적인 처리·보관 내용은 GitHub 개인정보 안내에 따르며, 개발자가 확장 프로그램의 메모를 GitHub로 자동 전송한다는 뜻은 아닙니다.</p>
 
     <h2>7. 문의 및 정책 갱신</h2>
     <p>개인정보 처리방침, 로컬 데이터 처리 또는 정책 변경에 관한 문의:</p>
@@ -137,12 +137,12 @@
       <li><b>개발자:</b> lemrlog</li>
       <li><b>이메일:</b> <a href="mailto:lemrlog@gmail.com">lemrlog@gmail.com</a></li>
     </ul>
-    <p class="note">이 문서는 검증된 v4.7.2 미출시 개발 후보를 기준으로 만든 로컬 검토 초안입니다. 공개 사이트에는 기존 v4.6.4 정책이 유지됩니다. 운영자 검토 및 실제 출시 결정 후 게시 여부를 정합니다.</p>
+    <p class="note">본 문서의 v4.7.2 기능 설명은 해당 버전의 업데이트가 실제 배포된 뒤 적용됩니다. v4.6.4 또는 그 이전 버전을 사용 중인 경우에는 해당 버전에서 제공하는 기능과 저장·삭제 동작이 다를 수 있습니다. 정책 변경 사항은 이 페이지의 문서 개정일과 버전 안내를 통해 확인할 수 있습니다.</p>
 
     <hr style="border:0;border-top:1px solid var(--border);margin:42px 0">
     <section lang="en" aria-labelledby="privacy-en-title">
       <h1 id="privacy-en-title">memojang Privacy Policy</h1>
-      <div class="subtitle">Draft revised: October 21, 2026 | Describes memojang v4.7.2 (unreleased development candidate) | Developer: lemrlog</div>
+      <div class="subtitle">Revised: October 21, 2026 | Applies when memojang v4.7.2 update becomes available | Developer: lemrlog</div>
       <p class="lang-link"><a href="#privacy-ko-title" lang="ko">한국어 안내 ↑</a></p>
 
       <div class="highlight-box">
@@ -179,16 +179,16 @@
 
       <h2>5. Autosave, deletion, and retention</h2>
       <p>With autosave enabled, changes are written after a short delay. When autosave is off, you must save manually. Storage quotas or errors, abrupt browser/tab closure, or power loss before a write completes can cause <b>the most recent changes to be lost</b>. Check the save status and keep independent backups of important notes.</p>
-      <p><b>Deleting a note in v4.7.2:</b> Successful normal deletion replaces its current title, body, and tags with a minimal deletion tombstone and removes its previous edit history (including older body and tags) within the same IndexedDB transaction. If history deletion fails, deletion of the note also rolls back. <b>When a note with v4.7.0/v4.7.1 history was deleted during a v4.6.4-or-earlier downgrade</b>, the old version may leave plaintext history in local <code>meta</code>. <b>On startup after re-upgrading to v4.7.2</b>, the extension removes that history only if the note's exact ID is still an authoritative deletion tombstone. History belonging to live notes or IDs whose deletion cannot be verified is preserved. An interrupted or failed maintenance transaction rolls back its changes and can be retried at the next initialization. This does not delete earlier <code>chrome.storage.local</code> records, downloaded backups, or other browser/OS copies, and cleanup does not occur before v4.7.2 is run again. Back up important data before clearing any extension storage.</p>
+      <p><b>Deleting a note in v4.7.2:</b> Successful normal deletion replaces its current title, body, and tags with a minimal deletion tombstone and removes its previous edit history (including older body and tags) within the same IndexedDB transaction. If history deletion fails, deletion of the note also rolls back. <b>When a note with v4.7.0/v4.7.1 history was deleted during a v4.6.4-or-earlier downgrade</b>, the old version may leave plaintext history in local <code>meta</code>. <b>When you open a v4.7.2 New Tab page after re-upgrading and its note store initializes</b>, the extension removes that history only if the note's exact ID is still an authoritative deletion tombstone. History belonging to live notes or IDs whose deletion cannot be verified is preserved. An interrupted or failed maintenance transaction rolls back its changes and can be retried at the next initialization. This does not delete earlier <code>chrome.storage.local</code> records, downloaded backups, or other browser/OS copies, and cleanup does not occur until a v4.7.2 New Tab page initializes the note store. Back up important data before clearing any extension storage.</p>
       <p>Notes and settings can remain locally until you delete them or clear browser/extension storage. Deleting a note within the app does not guarantee erasure of its tombstone, earlier legacy copies, downloaded backups, or other browser/OS copies. You must manage downloaded files separately. Back up anything you need before clearing data or uninstalling the extension.</p>
 
       <h2>6. Transmission, third parties, and policy-page hosting</h2>
       <p>The current extension does not upload notes, tags, or edit history to a developer-operated server or use advertising/analytics trackers, remotely executed code, or its own cloud sync. The developer does not sell or rent this data or use it for behavioral advertising through the extension's normal operation. Sharing a backup yourself or storing it with another service is separate.</p>
-      <p><b>Hosting this privacy-policy webpage is separate from using the extension.</b> The existing public policy is served through GitHub Pages at <a href="https://gssg100.github.io/memojang-privacy/">gssg100.github.io/memojang-privacy/</a>. GitHub, as the website host, may process technical information such as visitors' IP addresses and access logs under its own privacy notices and retention practices. This does not mean the extension automatically transfers your notes to GitHub. This v4.7.2 policy is a local review draft and has not been published on that site.</p>
+      <p><b>Hosting this privacy-policy webpage is separate from using the extension.</b> The privacy notice is served through GitHub Pages at <a href="https://gssg100.github.io/memojang-privacy/">gssg100.github.io/memojang-privacy/</a>. GitHub, as the website host, may process technical information such as visitors' IP addresses and access logs under its own privacy notices and retention practices. This does not mean the extension automatically transfers your notes to GitHub.</p>
 
       <h2>7. Contact and updates</h2>
       <p>For questions about this notice, local data processing, or policy changes: Developer: <b>lemrlog</b> | Email: <a href="mailto:lemrlog@gmail.com">lemrlog@gmail.com</a>.</p>
-      <p class="note">This local review draft describes the tested but unreleased v4.7.2 candidate. The public website continues to show the v4.6.4 notice. Publication requires developer review and a release decision.</p>
+      <p class="note">The v4.7.2-specific descriptions in this notice apply once that extension update is actually released. Users of v4.6.4 or earlier may have different storage, history, and deletion behavior. Consult the revision date and version information here for policy changes.</p>
     </section>
 
     <footer>
